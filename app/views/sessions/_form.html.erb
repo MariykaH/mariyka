@@ -1,0 +1,32 @@
+<%= form_with(model: session) do |form| %>
+  <% if session.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+        <% session.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :zal, style: "display: block" %>
+    <%= form.text_field :zal %>
+  </div>
+
+  <div>
+    <%= form.label :datas, style: "display: block" %>
+    <%= form.text_field :datas %>
+  </div>
+
+  <div>
+    <%= form.label :film, style: "display: block" %>
+    <%= form.text_field :film %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
